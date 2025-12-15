@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>📊 游戏总结与学习报告</h1>
+    <hr>
+    <p>👤 玩家：<strong>{{ summary.player_name }}</strong></p>
+    <p>🎯 情景选择正确次数：<strong>{{ summary.score }}/{{ summary.scenes | length if summary.scenes else 0 }}</strong></p>
+    <p>📚 知识测试总得分：<strong>{{ summary.knowledge_points }}分</strong></p>
+    <h2>⭐ 最终总得分：<strong style="color: #ffc107;">{{ summary.final_score }}/{{ summary.total_possible }}分 ({{ summary.percentage }}%)</strong></h2>
+
+    <p style="padding: 15px; border: 1px dashed #007bff; border-radius: 8px;">🏆 **学习评价：** {{ summary.evaluation }}</p>
+
+    <h3>📋 你的选择记录：</h3>
+    {% for choice in summary.choices_made %}
+        {% set status_class = "feedback-correct" if choice.correct else "feedback-incorrect" %}
+        <p class="{{ status_class }}">
+            {{ loop.index }}. {{ choice.scene }}: {{ "✅" if choice.correct else "❌" }}
+        </p>
+    {% endfor %}
+    
+    <a href="{{ url_for('index') }}" class="option-button" style="background-color: #6c757d;">重新开始游戏</a>
+{% endblock %}
