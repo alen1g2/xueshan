@@ -1,0 +1,80 @@
+body {
+    /* 方案 A：使用柔和的蓝紫渐变，营造科技感或深邃感 */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+    /* 方案 B：如果想贴合“雪山”主题，可以找一张雪山图作为背景，并加遮罩 */
+    /* background-image: url('您的雪山图片链接.jpg'); */
+    /* background-size: cover; */
+
+    height: 100vh; /* 占满全屏 */
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+/* 假设包裹内容的 div 类名是 .container 或 .card */
+.container {
+    background: rgba(255, 255, 255, 0.9); /* 半透明白色 */
+    padding: 40px;
+    border-radius: 20px; /* 更大的圆角 */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* 更有层次感的阴影 */
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+
+    /* 可选：磨砂效果 (仅在背景有图片时明显) */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+/* 假设按钮是 button 或 .btn */
+button, .btn {
+    background: linear-gradient(to right, #11998e, #38ef7d); /* 清新的绿色渐变 */
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    font-size: 18px;
+    border-radius: 50px; /* 胶囊形状 */
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.4); /* 绿色光晕 */
+    transition: all 0.3s ease; /* 动画过渡 */
+    margin-top: 20px;
+}
+
+/* 鼠标放上去的效果 */
+button:hover, .btn:hover {
+    transform: translateY(-2px); /* 微微上浮 */
+    box-shadow: 0 8px 20px rgba(46, 204, 113, 0.6);
+}
+input[type="text"] {
+    width: 80%;
+    padding: 12px 15px;
+    margin: 15px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #38ef7d; /* 选中时变绿 */
+}
+/* 定义动画 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 40px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+/* 应用到卡片上 */
+.container {
+    animation-name: fadeInUp;
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
+}
