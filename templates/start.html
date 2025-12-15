@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>🎓 欢迎来到《价值选择之旅》思政教学游戏 🎓</h1>
+    <p>🎯 游戏目标：通过情景选择，学习正确的价值判断和选择原则。</p>
+    <form action="{{ url_for('start_game') }}" method="post">
+        <label for="player_name">请输入你的姓名：</label><br>
+        <input type="text" id="player_name" name="player_name" placeholder="例如：李明" required style="padding: 8px; margin: 10px 0; border-radius: 5px; border: 1px solid #ccc;"><br>
+        <button type="submit" class="option-button" style="background-color: #28a745;">开始价值之旅</button>
+    </form>
+{% endblock %}
