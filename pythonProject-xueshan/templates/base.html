@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>价值选择之旅 - 思政游戏</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* 临时或基础CSS，建议移动到style.css */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f4f9; color: #333; margin: 0; padding: 20px; text-align: center; }
+        .container { max-width: 800px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        h1, h2 { color: #007bff; }
+        .option-button { background-color: #007bff; color: white; padding: 12px 20px; border: none; border-radius: 8px; margin: 8px; cursor: pointer; font-size: 16px; transition: background-color 0.3s; }
+        .option-button:hover { background-color: #0056b3; }
+        .feedback-correct { color: #28a745; font-weight: bold; }
+        .feedback-incorrect { color: #dc3545; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
